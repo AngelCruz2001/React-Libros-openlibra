@@ -6,7 +6,7 @@ import { BookImage } from './BookImage'
 import { useFetch } from '../../hooks/useFetch';
 
 export const Book = () => {
-    const { data, loading, error } = useFetch(16806,"BookId");
+    const { data, loading } = useFetch(16806,"BookId");
     const libro = !loading ? data[0] : {}
     return (
         <>
