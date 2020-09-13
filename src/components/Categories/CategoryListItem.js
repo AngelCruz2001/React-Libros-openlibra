@@ -1,13 +1,14 @@
 import React from 'react';
 
-const CategoryListItem = () => {
+const CategoryListItem = ({name}) => {
     return (
-        <div className="row">
-            <div className="col-4">
+        <div className="row mb-1">
+            <div className="col-1">
                 {/* Icono */}
+                <img src="./assets/icons/ajedrez.png"/>
             </div>
-            <div className="col-8">
-                
+            <div className="col">
+                <p className="text-uppercase">{name}</p>
             </div>
         </div>
     );
