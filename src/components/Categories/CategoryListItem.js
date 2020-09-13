@@ -6,7 +6,9 @@ const CategoryListItem = () => {
             <div className="col-4">
                 {/* Icono */}
             </div>
-            <div className="col-8"></div>
+            <div className="col-8">
+                
+            </div>
         </div>
     );
 }
