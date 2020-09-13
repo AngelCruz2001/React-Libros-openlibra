@@ -20,7 +20,7 @@ export const useFetch = (param = "") => {
                         error: true
                     }))
                 })
-        }, 10000000);
+        }, 1200);
     }, [param]);
 
     return state;
