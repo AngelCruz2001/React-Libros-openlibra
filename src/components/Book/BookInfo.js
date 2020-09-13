@@ -20,11 +20,11 @@ export const BookInfo = ({ libro }) => {
                     <div className="col-6" >
                         <br />
                         <div className="row">
-                            <button className="btn btn-outline-primary mb-3" style={{ width: 350 }}>Download</button>
+                            <a href={ libro.url_download } className="btn btn-outline-primary mb-3" style={{ width: 350 }}>Download</a>
 
                         </div>
                         <div className="row">
-                            <button className="btn btn-outline-primary mb-3" style={{ width: 350 }}>Read online</button>
+                            <a href={libro.url_details} className="btn btn-outline-primary mb-3" style={{ width: 350 }}>Read online</a>
 
                         </div>
                     </div>

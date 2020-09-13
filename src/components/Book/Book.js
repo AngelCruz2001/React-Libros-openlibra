@@ -1,4 +1,6 @@
 import React from 'react'
+import { AnimationControler } from '../LottiesAnimations/AnimationControler.js'
+
 import { BookInfo } from './BookInfo'
 import { BookImage } from './BookImage'
 import { useFetch } from '../../hooks/useFetch';
@@ -9,10 +11,10 @@ export const Book = () => {
     return (
         <>
             { (!loading) ?
-            
+
                 <div className="row">
                     <div className="col-4">
-                    {console.log(libro)}
+                        {console.log(libro)}
                         <BookImage
                             image={libro.cover}
                             id={libro.ID}
@@ -20,7 +22,7 @@ export const Book = () => {
                     </div>
                     <div className="col-8">
                         <h4 className="text-muted">Informacion del libro</h4>
-                        <hr/>
+                        <hr />
                         <BookInfo
                             libro={libro}
                         />
@@ -28,7 +30,7 @@ export const Book = () => {
                     </div>
                 </div>
                 :
-                <h1>Loading...</h1>
+                    <AnimationControler />
             }
         </>
     )
