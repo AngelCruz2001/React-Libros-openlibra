@@ -29,7 +29,7 @@ export const BookInfo = ({ libro }) => {
                         </div>
                     </div>
                     <blockquote class="blockquote">
-                        <p class="mb-0">{libro.content}</p>
+                        <p className="mb-0">{libro.content}</p>
                     </blockquote>
 
 

@@ -3,7 +3,7 @@ import { useFetch } from '../../hooks/useFetch';
 import { BookItem } from './BookItem'
 import { InputSearch } from './InputSearch'
 
-export const Search = () => {
+export const Search = ({history}) => {
 
     const [dataFetch, setDataFetch] = useState({ param: "Java", type: "book_title" });
     const { data, loading } = useFetch(dataFetch);
@@ -19,6 +19,7 @@ export const Search = () => {
                                 <BookItem
                                     key={b.ID}
                                     book={b}
+                                    history={history}
                                 />
                             ))
                         }

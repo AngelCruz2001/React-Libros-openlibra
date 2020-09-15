@@ -1,9 +1,24 @@
-import React from 'react'
+import React, { useContext } from 'react'
+import { Link, Redirect } from 'react-router-dom';
+import { BookContext } from '../../useReducer/BookContext';
+import { Book } from '../Book/Book';
+
 import './bookItem.css'
-export const BookItem = ({ book }) => {
+export const BookItem = ({ book, history }) => {
+
+    const { dispatch } = useContext(BookContext);
+
+    const handleClick = () => {
+        dispatch({
+            type: 'add',
+            payload: book,
+        })
+        history.push('/Book');
+    }
+
     return (
         <>
-            <div className="card mb-3">
+            <div className="card mb-3 item" onClick={handleClick}>
                 <div className="row no-gutters">
                     <div className="col-lg-1 col-md-2 col-sm-3 col-xs-12">
                         <img src={book.cover} className="card-img" alt="Book" />

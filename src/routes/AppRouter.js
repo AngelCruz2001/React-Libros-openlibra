@@ -13,9 +13,6 @@ import { Nav } from '../components/Navigation/Nav';
 const AppRouter = () => {
     return (
         <>
-
-            
-            
                 <Router>
                     <Nav />
                     <div className="m-3">
