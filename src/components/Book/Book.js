@@ -6,7 +6,8 @@ import { BookImage } from './BookImage'
 import { useFetch } from '../../hooks/useFetch';
 
 export const Book = () => {
-    const { data, loading } = useFetch(16806,"BookId");
+    const { data, loading } = useFetch(16516, "BookId");
+
     const libro = !loading ? data[0] : {}
     return (
         <>
@@ -21,7 +22,7 @@ export const Book = () => {
                         />
                     </div>
                     <div className="col-8">
-                        <h4 className="text-muted">Informacion del libro</h4>
+                        <h4 className="text-muted">Book information</h4>
                         <hr />
                         <BookInfo
                             libro={libro}
@@ -30,7 +31,7 @@ export const Book = () => {
                     </div>
                 </div>
                 :
-                    <AnimationControler />
+                <AnimationControler />
             }
         </>
     )

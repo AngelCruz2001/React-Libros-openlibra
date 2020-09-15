@@ -1,27 +1,14 @@
 import { useState, useEffect } from "react"
-import { getAllCategories } from "../helpers/getAllCategories";
-import { getBooksById } from "../helpers/getBooksByID"
+import { getBooks } from "../helpers/getBooks"
 
 
-export const useFetch = (param = "",action) => {
+export const useFetch = ({param = "", type=""}) => {
     const [state, setState] = useState({ data: [], loading: true, error: false });
-    let promese = () =>{}
-  
-    switch (action) {
-        case 'BookId':
-            promese=getBooksById(param)
-            break;
-        case 'AllCategories':
-             promese=getAllCategories()
-            break;
-    
-        default:
-            break;
-    }
+
     useEffect(() => {
         setTimeout(() => {
 
-            promese
+            getBooks(param, type)
                 .then(data => {
                     setState({
                         data: data,
@@ -35,7 +22,7 @@ export const useFetch = (param = "",action) => {
                         error: true
                     }))
                 })
-        }, 1200);
+        }, 1000);
     }, [param]);
 
     return state;

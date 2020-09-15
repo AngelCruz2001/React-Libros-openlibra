@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 
-export const ItemDropDown = () => {
+export const ItemDropDown = ({ setDataFetch }) => {
+    console.log(2)
     const values = ['Name', 'Category', 'KeyWords', 'Author'];
     const [state, setState] = useState("Select");
 
@@ -13,6 +14,7 @@ export const ItemDropDown = () => {
                 document.getElementById(i).setAttribute("class", 'dropdown-item')
         }
         setState(values[parseInt(target.id)])
+        setDataFetch((s) => ({ ...s, type: state }))
     }
 
     return (

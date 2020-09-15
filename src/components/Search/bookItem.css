@@ -1,0 +1,16 @@
+
+
+.line {
+    width: 3px;
+    height: 130px;
+    background-color: #299bb54f;
+    border-radius: 50px;
+    margin-right: 5px;
+    margin-left: 20px;
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+
+p {
+    font-size: 18px;
+}

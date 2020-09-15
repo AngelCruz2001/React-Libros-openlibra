@@ -1,13 +1,8 @@
 import React from 'react'
-import { ItemDropDown } from './ItemDropDown'
+import { Form } from './Form'
 
-export const InputSearch = () => {
+export const InputSearch = React.memo(({ setDataFetch }) => {
     return (
-        <>
-            <div className="input-group mb-3">
-                <ItemDropDown />
-                <input type="text" className="form-control" aria-label="Text input with segmented dropdown button" />
-            </div>
-        </>
+        <Form setDataFetch={setDataFetch} />
     )
-}
+})
