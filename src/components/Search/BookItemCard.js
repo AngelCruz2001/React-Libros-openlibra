@@ -4,7 +4,7 @@ import { BookContext } from '../../useReducer/BookContext';
 import { Book } from '../Book/Book';
 
 import './bookItem.css'
-export const BookItem = ({ book, history }) => {
+export const BookItemCard = ({ book, history }) => {
 
     const { dispatch } = useContext(BookContext);
 

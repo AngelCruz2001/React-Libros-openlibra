@@ -3,27 +3,34 @@ import { getBooks } from "../helpers/getBooks"
 
 
 export const useFetch = ({ param = "", type = "" }) => {
-    const [state, setState] = useState({ data: [], loading: true, error: false });
+    const [state, setState] = useState({ data: [], loading: false, error: false });
+    console.log("Holaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa 1 ")
 
     useEffect(() => {
-        setState({ data: [], loading: true, error: false })
-        setTimeout(() => {
+        if (param !== "") {
+            console.log("Holaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa 2 ")
+            setState({ data: [], loading: true, error: false })
+            setTimeout(() => {
 
-            getBooks(param, type)
-                .then(data => {
-                    setState({
-                        data: data,
-                        loading: false,
-                        error: false,
-                    });
-                })
-                .catch(data => {
-                    setState(s => ({
-                        ...s,
-                        error: true
-                    }))
-                })
-        }, 1000);
+                getBooks(param, type)
+                    .then(data => {
+                        console.log("Entre a el then")
+                        setState({
+                            data: data,
+                            loading: false,
+                            error: false,
+                        });
+                    })
+                    .catch(data => {
+                        console.log("Entre a el catch")
+                        setState(s => ({
+                            ...s,
+                            error: true
+                        }))
+                    })
+            }, 1000);
+        }
+
     }, [param]);
 
     return state;

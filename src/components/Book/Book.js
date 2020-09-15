@@ -1,9 +1,7 @@
 import React, { useContext, useEffect } from 'react'
 import { AnimationControler } from '../LottiesAnimations/AnimationControler.js'
-
 import { BookInfo } from './BookInfo'
 import { BookImage } from './BookImage'
-import { useFetch } from '../../hooks/useFetch';
 import { BookContext } from '../../useReducer/BookContext.js';
 
 export const Book = () => {
@@ -16,14 +14,14 @@ export const Book = () => {
     return (
         <>
             <div className="row">
-                <div className="col-4">
+                <div className="col-3">
                     {console.log(libro)}
                     <BookImage
                         image={libro.cover}
                         id={libro.ID}
                     />
                 </div>
-                <div className="col-8">
+                <div className="col">
                     <h4 className="text-muted">Book information</h4>
                     <hr />
                     <BookInfo

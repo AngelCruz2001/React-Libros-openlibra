@@ -28,7 +28,7 @@ export const BookInfo = ({ libro }) => {
 
                         </div>
                     </div>
-                    <blockquote class="blockquote">
+                    <blockquote className="blockquote">
                         <p className="mb-0">{libro.content}</p>
                     </blockquote>
 

@@ -1,22 +1,24 @@
 import React, { useState } from 'react'
 import { useFetch } from '../../hooks/useFetch';
-import { BookItem } from './BookItem'
+import { AnimationControler } from '../LottiesAnimations/AnimationControler';
+import { BookItemCard } from './BookItemCard'
 import { InputSearch } from './InputSearch'
 
-export const Search = ({history}) => {
+export const Search = ({ history }) => {
 
-    const [dataFetch, setDataFetch] = useState({ param: "Java", type: "book_title" });
-    const { data, loading } = useFetch(dataFetch);
+    const [dataBooks, setDataBooks] = useState({ param: "", type: "" });
+    const { data, loading } = useFetch(dataBooks);
 
     return (
         <>
-            <InputSearch setDataFetch={setDataFetch} />
+            <InputSearch setDataBooks={setDataBooks} />
+            {(loading) && <AnimationControler />}
             {
-                (!loading) ?
+                ((data.length > 0)) ?
                     <div>
                         {
                             data.map((b) => (
-                                <BookItem
+                                <BookItemCard
                                     key={b.ID}
                                     book={b}
                                     history={history}
@@ -25,7 +27,11 @@ export const Search = ({history}) => {
                         }
                     </div>
                     :
-                    <h1>Loading...</h1>
+                    (!loading) && <div
+                        className="alert alert-primary text-center"
+                    >
+                        Hello, what are you looking for...?
+                    </div>
             }
         </>
     )

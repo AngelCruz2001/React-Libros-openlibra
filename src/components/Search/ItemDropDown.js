@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
+import { typesFetch } from '../../types.js';
 
-export const ItemDropDown = ({ setDataFetch }) => {
+export const ItemDropDown = ({ setTypeSearch }) => {
     const values = ['Name', 'Category', 'KeyWords', 'Author'];
     const [state, setState] = useState("Select");
 
@@ -12,8 +13,10 @@ export const ItemDropDown = ({ setDataFetch }) => {
                 :
                 document.getElementById(i).setAttribute("class", 'dropdown-item')
         }
-        setState(values[parseInt(target.id)])
-        setDataFetch((s) => ({ ...s, type: state }))
+        const value = values[parseInt(target.id)]
+        setState(value)
+        console.log(typesFetch[value]);
+        setTypeSearch(typesFetch[value])
     }
 
     return (
@@ -22,6 +25,7 @@ export const ItemDropDown = ({ setDataFetch }) => {
                 <button
                     className="btn btn-outline-secondary dropdown-toggle"
                     type="button"
+                    id="buttonDropDown"
                     data-toggle="dropdown"
                     aria-haspopup="true"
                     aria-expanded="false">
