@@ -1,7 +1,6 @@
 import React, { useState } from 'react'
 
 export const ItemDropDown = ({ setDataFetch }) => {
-    console.log(2)
     const values = ['Name', 'Category', 'KeyWords', 'Author'];
     const [state, setState] = useState("Select");
 

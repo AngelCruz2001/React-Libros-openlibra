@@ -1,7 +1,6 @@
 import React from 'react'
 import './bookItem.css'
 export const BookItem = ({ book }) => {
-    console.log(book);
     return (
         <>
             <div className="card mb-3">
@@ -25,7 +24,6 @@ export const BookItem = ({ book }) => {
                     </div>
                 </div>
             </div>
-
         </>
     )
 }

@@ -2,10 +2,11 @@ import { useState, useEffect } from "react"
 import { getBooks } from "../helpers/getBooks"
 
 
-export const useFetch = ({param = "", type=""}) => {
+export const useFetch = ({ param = "", type = "" }) => {
     const [state, setState] = useState({ data: [], loading: true, error: false });
 
     useEffect(() => {
+        setState({ data: [], loading: true, error: false })
         setTimeout(() => {
 
             getBooks(param, type)
