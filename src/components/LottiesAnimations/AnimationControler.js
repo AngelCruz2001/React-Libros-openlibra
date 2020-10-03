@@ -11,7 +11,7 @@ export const AnimationControler = () => {
             preserveAspectRatio: 'xMidYMid slice'
         }
     };
-
+    //Se esta conectando con GitHub
     return (
         <div>
             <Lottie options={defaultOptions}
